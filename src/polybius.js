@@ -4,7 +4,6 @@
 // of the anonymous function on line 6
 
 const polybiusModule = (function () {
-  // you can add any code you want within this function scope
 const decodeKey = {
     11: "a", 21: "b", 31: "c", 41: "d", 51: "e",
     12: "f", 22: "g", 32: "h", 42: "(i/j)", 52: "k",
@@ -26,14 +25,10 @@ const decodeKey = {
       splitString = input.split("")
     } else {
       const noSpaces = input.replace(" ", "")
-      if(noSpaces.length % 2 !== 0) {
-        return false
-      }
+      if(noSpaces.length % 2 !== 0) return false
       key = decodeKey
       splitString = input.split(" ")
-      function helperKey (macth) {
-        return key[macth]
-      }
+      let helperKey = match => key[match]
       return inputReplace = input.replace(/[11-55]{2}/g, helperKey).toLowerCase()
     }
     return splitString.map(element=> key[element] || " ").join("")

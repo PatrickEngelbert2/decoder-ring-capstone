@@ -14,8 +14,8 @@ const substitutionModule = (function () {
       if (encode) key[abcs[i]] = alphabet[i]
       if (!encode) key[alphabet[i]] = abcs[i]
     }
-    let helperKey=(macth)=> {
-      return key[macth]
+    let helperKey=(match)=> {
+      return key[match]
     }
     return input.replace(/[^\s]/g, helperKey).toLowerCase()
   }

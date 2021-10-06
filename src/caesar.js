@@ -24,7 +24,6 @@ const caesarCode = (input, shift) => {
   let endResult = toLetters.join("")
   return endResult
 }
-
   function caesar(input, shift=0, encode = true) {
     if(shift < -25 || shift > 25 || shift === 0) return false
     if(encode === true) {
